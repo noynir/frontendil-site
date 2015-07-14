@@ -1,0 +1,24 @@
+{
+  "version": "v4",
+  "repo": "NoamKfir/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "meteor/meteor.d.ts": {
+      "commit": "f999dcd9543265848a33fa3bb8379bf0393d33c8"
+    },
+    "meteor-iron-router/meteor-iron-router.d.ts": {
+      "commit": "d5275a6cd2a8aa92100622172df9c433b0058038"
+    },
+    "meteor-iron-controller/meteor-iron-controller.d.ts": {
+      "commit": "d5275a6cd2a8aa92100622172df9c433b0058038"
+    },
+    "meteor-iron-dynamic-template/meteor-iron-dynamic-template.d.ts": {
+      "commit": "d5275a6cd2a8aa92100622172df9c433b0058038"
+    },
+    "underscore/underscore.d.ts": {
+      "commit": "d5275a6cd2a8aa92100622172df9c433b0058038"
+    }
+  }
+}
