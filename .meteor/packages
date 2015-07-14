@@ -7,3 +7,8 @@
 meteor-platform
 autopublish
 insecure
+mquandalle:jade
+less
+meteortypescript:compiler
+twbs:bootstrap
+iron:router
