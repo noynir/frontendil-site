@@ -1,0 +1,12 @@
+.events-index
+    h1 Prizes
+    section.commands.navbar-btn
+        ul.nav.nav-pills
+            li(role='presentation')
+                a(href="{{ pathFor 'prizesCreate' }}") Create
+    section
+        ul
+            +each this
+                li
+                    span #{name}
+                    a.link(href="{{ pathFor 'prizesEdit' }}") Edit

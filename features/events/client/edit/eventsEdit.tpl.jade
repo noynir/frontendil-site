@@ -1,0 +1,20 @@
+.events-create
+    h1 Create Event
+    section.commands
+        ul
+    section
+        form
+            .field
+                label(for="#name") Name
+                input#name.field-control(value="{{ name }}")
+            .field
+                label(for="#date") Date
+                input#date.field-control(value="{{ date }}")
+            .field
+                label(for="#code") Code
+                input#code.field-control(value="{{ code }}")
+            .field
+                label(for="#nameField") Name Field
+                input#nameField.field-control(value="{{ nameField }}")
+            .field
+                button.btn.btn-primary.save-event-command(type="submit") Save

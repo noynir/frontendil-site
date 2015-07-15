@@ -1,0 +1,17 @@
+h1 Raffle for #{ event.name }
+
+.commands
+    button.btn.btn-primary.raffle-prizes-command Raffle Prizes
+    button.btn.btn-secondary.raffle-person-command Raffle Another
+    button.btn.btn-secondary.reset-raffle-command Reset Raffle
+
+table
+    thead
+        tr
+            th Prize
+            th Winner
+    tbody
+        +each event.raffle
+            tr
+                td {{ getPrizeName ../prizes }}
+                td {{ getWinnerName ../event }}

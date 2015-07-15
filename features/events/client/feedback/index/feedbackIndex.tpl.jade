@@ -1,0 +1,17 @@
+.feedback
+    h2 Feedback for #{name}
+    .commands
+        button.btn.btn-default.fetch-feedback-command Fetch Feedback
+    table.feedback-table
+        thead
+            tr
+                +each questions
+                    th(title="#{question}") #{question}
+            tr
+                +each questions
+                    td(title="#{id}") #{id}
+        tbody
+            +each responses
+                tr
+                    +each ../questions
+                        td {{getAnswerValue this ../answers}}

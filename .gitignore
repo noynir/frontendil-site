@@ -56,3 +56,7 @@ crashlytics-build.properties
 ### TypeScript
 zzz.ts-compiler.ts
 typings
+
+
+### Project
+settings/settings.json

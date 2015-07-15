@@ -1,0 +1,8 @@
+tr
+    td
+        hidden(name="event", value="#{../event._id}")
+        | {{ getPrizeName }}
+    td
+        input(name="amount", value="#{amount}")
+    td
+        button.btn.btn-primary.save-command Save

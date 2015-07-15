@@ -1,0 +1,19 @@
+.events-index
+    h1 Events
+    section.commands.navbar-btn
+        ul.nav.nav-pills
+            li(role='presentation')
+                a(href="{{ pathFor 'eventsCreate' }}") Create
+    section
+        ul
+            +each this
+                li
+                    span #{name}
+                    span
+                        | (
+                        +friendlyDate(date)
+                        | )
+                    a.link(href="{{ pathFor 'eventsEdit' }}") Edit
+                    a.link(href="{{ pathFor 'eventsPrizesIndex' }}") Prizes
+                    a.link(href="{{ pathFor 'feedbackIndex' }}") Feedback
+                    a.link(href="{{ pathFor 'raffleIndex' }}") Raffle

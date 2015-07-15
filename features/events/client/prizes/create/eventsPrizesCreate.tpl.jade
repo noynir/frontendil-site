@@ -1,0 +1,10 @@
+tr
+    td
+        hidden(name="event", value="#{../event._id}")
+        select(name="prize", value="#{prizeId}")
+            +each ../prizes
+                option(value="{{ _id }}") #{ name }
+    td
+        input(name="amount", value="#{amount}")
+    td
+        button.btn.btn-primary.save-command Add
