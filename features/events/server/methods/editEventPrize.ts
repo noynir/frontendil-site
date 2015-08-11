@@ -4,6 +4,12 @@ Meteor.methods({
         check(prizeId, String);
         check(amount, Match.Integer);
 
+        let fixId = function(sourceId) {
+            return sourceId.replace('ObjectID', 'ObjectId');
+        };
+
+        eventId = fixId(eventId);
+        prizeId = fixId(prizeId);
 
         let event = Events.findOne({ _id: eventId });
         let eventPrizes = event.prizes || [];
