@@ -3,7 +3,7 @@
     section.commands.navbar-btn
         ul.nav.nav-pills
             li(role='presentation')
-                a(href="{{ pathFor 'eventsCreate' }}") Create
+                a(href="{{ pathFor 'events.create' }}") Create
     section
         ul
             +each this
@@ -13,7 +13,7 @@
                         | (
                         +friendlyDate(date)
                         | )
-                    a.link(href="{{ pathFor 'eventsEdit' }}") Edit
-                    a.link(href="{{ pathFor 'eventsPrizesIndex' }}") Prizes
-                    a.link(href="{{ pathFor 'feedbackIndex' }}") Feedback
-                    a.link(href="{{ pathFor 'raffleIndex' }}") Raffle
+                    a.link(href="{{ pathFor 'events.edit' }}") Edit
+                    a.link(href="{{ pathFor 'events.prizes.index' }}") Prizes
+                    a.link(href="{{ pathFor 'feedback.index' }}") Feedback
+                    a.link(href="{{ pathFor 'raffle.index' }}") Raffle

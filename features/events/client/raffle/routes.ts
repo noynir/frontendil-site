@@ -1,4 +1,4 @@
-Router.route('raffleIndex', {
+Router.route('raffle.index', {
     path: '/events/:_id/raffle',
     data: function() {
         return {

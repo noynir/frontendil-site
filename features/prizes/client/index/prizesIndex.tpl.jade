@@ -3,10 +3,10 @@
     section.commands.navbar-btn
         ul.nav.nav-pills
             li(role='presentation')
-                a(href="{{ pathFor 'prizesCreate' }}") Create
+                a(href="{{ pathFor 'prizes.create' }}") Create
     section
         ul
             +each this
                 li
                     span #{name}
-                    a.link(href="{{ pathFor 'prizesEdit' }}") Edit
+                    a.link(href="{{ pathFor 'prizes.edit' }}") Edit

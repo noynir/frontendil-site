@@ -7,6 +7,6 @@ Template['eventsEdit'].events({
         event.code = e.target.code.value;
         event.nameField = e.target.nameField.value;
         Meteor.call('saveEvent', event);
-        Router.go('eventsIndex');
+        Router.go('events.index');
     }
 });

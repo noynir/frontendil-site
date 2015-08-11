@@ -1,11 +1,11 @@
-Router.route('eventsIndex', {
+Router.route('events.index', {
     path: '/events',
     data: function() {
         return Events.find();
     }
 });
 
-Router.route('eventsCreate', {
+Router.route('events.create', {
     path: '/events/create',
     template: 'eventsEdit',
     data: function() {
@@ -13,7 +13,7 @@ Router.route('eventsCreate', {
     }
 });
 
-Router.route('eventsEdit', {
+Router.route('events.edit', {
     path: '/events/:_id/edit',
     data: function() {
         return Events.findOne({ _id: this.params._id });

@@ -4,6 +4,6 @@ Template['prizesEdit'].events({
         let prize = this;
         prize.name = e.target.name.value;
         Meteor.call('savePrize', prize);
-        Router.go('prizesIndex');
+        Router.go('prizes.index');
     }
 });
