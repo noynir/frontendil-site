@@ -4,14 +4,12 @@ Meteor.methods({
         check(prizeId, String);
         check(amount, Match.Integer);
 
-        console.log('editEventPrize', 'eventId:', eventId, 'prizeId:', prizeId, 'amount:', amount);
 
         let event = Events.findOne({ _id: eventId });
         let eventPrizes = event.prizes || [];
         let eventPrize = _.findWhere(eventPrizes, { prizeId: prizeId });
 
         var modifyEventPrizeAmount = function() {
-            console.log('updating event prize');
             Events.update(
                 {
                     _id: eventId,
@@ -25,7 +23,6 @@ Meteor.methods({
             );
         };
         var removeEventPrize = function() {
-            console.log('removing event prize');
             Events.update(
                 {
                     _id: eventId
@@ -40,7 +37,6 @@ Meteor.methods({
             );
         };
         var addEventPrize = function() {
-            console.log('adding event prize');
             Events.update(
                 {
                     _id: eventId
