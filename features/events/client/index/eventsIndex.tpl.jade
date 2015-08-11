@@ -1,10 +1,10 @@
 .events-index
     h1 Events
     +if(currentUser)
-    section.commands.navbar-btn
-        ul.nav.nav-pills
-            li(role='presentation')
-                a(href="{{ pathFor 'events.create' }}") Create
+        section.commands.navbar-btn
+            ul.nav.nav-pills
+                li(role='presentation')
+                    a(href="{{ pathFor 'events.create' }}") Create
     section
         ul
             +each this
@@ -15,7 +15,10 @@
                         +friendlyDate(date)
                         | )
                     +if(currentUser)
-                    a.link(href="{{ pathFor 'events.edit' }}") Edit
-                    a.link(href="{{ pathFor 'events.prizes.index' }}") Prizes
-                    a.link(href="{{ pathFor 'feedback.index' }}") Feedback
-                    a.link(href="{{ pathFor 'raffle.index' }}") Raffle
+                        a.link(href="{{ pathFor 'events.edit' }}") Edit
+                        | |
+                        a.link(href="{{ pathFor 'events.prizes.index' }}") Prizes
+                        | |
+                        a.link(href="{{ pathFor 'feedback.index' }}") Feedback
+                        | |
+                        a.link(href="{{ pathFor 'raffle.index' }}") Raffle
