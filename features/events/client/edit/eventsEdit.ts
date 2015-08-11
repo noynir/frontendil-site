@@ -3,6 +3,7 @@ Template['eventsEdit'].events({
         e.preventDefault();
         let event = this;
         let target = e.target;
+        event.identifier = target.identifier.value;
         event.name = target.name.value;
         event.date = moment(target.date.value).toDate();
         event.typeformCode = target.typeformCode.value;
