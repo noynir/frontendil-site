@@ -1,5 +1,6 @@
 .events-index
     h1 Events
+    +if(currentUser)
     section.commands.navbar-btn
         ul.nav.nav-pills
             li(role='presentation')
@@ -13,6 +14,7 @@
                         | (
                         +friendlyDate(date)
                         | )
+                    +if(currentUser)
                     a.link(href="{{ pathFor 'events.edit' }}") Edit
                     a.link(href="{{ pathFor 'events.prizes.index' }}") Prizes
                     a.link(href="{{ pathFor 'feedback.index' }}") Feedback
