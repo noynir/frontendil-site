@@ -2,10 +2,11 @@ Template['eventsEdit'].events({
     'submit form': function(e) {
         e.preventDefault();
         let event = this;
-        event.name = e.target.name.value;
-        event.date = moment(e.target.date.value).toDate();
-        event.code = e.target.code.value;
-        event.nameField = e.target.nameField.value;
+        let target = e.target;
+        event.name = target.name.value;
+        event.date = moment(target.date.value).toDate();
+        event.typeformCode = target.typeformCode.value;
+        event.typeformNameField = target.typeformNameField.value;
         Meteor.call('saveEvent', event);
         Router.go('events.index');
     }

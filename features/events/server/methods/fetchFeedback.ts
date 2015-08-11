@@ -27,7 +27,7 @@ Meteor.methods({
         let settings: any = Meteor.settings;
         let apiKey = settings.typeform.apiKey;
         let accountName = settings.typeform.accountName;
-        let url = 'http://' + accountName + '.typeform.com/v0/form/' + event.code + '?key=' + apiKey;
+        let url = 'http://' + accountName + '.typeform.com/v0/form/' + event.typeformCode + '?key=' + apiKey;
         HTTP.get(url, handleResponse);
     }
 });

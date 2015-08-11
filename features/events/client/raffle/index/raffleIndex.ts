@@ -15,7 +15,7 @@ Template['raffleIndex'].events({
 
 Template['raffleIndex'].helpers({
     getWinnerName: function(event) {
-        let nameField = event.nameField;
+        let nameField = event.typeformNameField;
 
         let projection = {};
         let key = 'responses.answers.' + nameField;
