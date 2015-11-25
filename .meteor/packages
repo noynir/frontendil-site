@@ -7,7 +7,6 @@
 meteor-platform
 mquandalle:jade
 less
-meteortypescript:compiler
 iron:router
 http
 momentjs:moment
