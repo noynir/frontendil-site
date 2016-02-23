@@ -2,6 +2,10 @@ Template['feedbackIndex'].events({
     'click .fetch-feedback-command': function(e) {
         e.preventDefault();
         Meteor.call('fetchFeedback', this._id);
+    },
+    'click .clear-feedback-command': function(e) {
+        e.preventDefault();
+        Meteor.call('clearFeedback', this._id);
     }
 });
 
