@@ -1,19 +1,35 @@
+function setMessage(message, error) {
+    Session.set('raffle-message', error ? (error.message ? error.text : error) : message);
+}
+
 Template['raffleIndex'].events({
     'click .raffle-prizes-command': function(e) {
         e.preventDefault();
-        Meteor.call('rafflePrizes', this.event._id);
+        setMessage('raffling');
+        Meteor.call('rafflePrizes', this.event._id, function (error) {
+            setMessage('raffled all prizes', error);
+        });
     },
     'click .raffle-person-command': function(e) {
         e.preventDefault();
-        Meteor.call('rafflePerson', this.event._id);
+        setMessage('raffling');
+        Meteor.call('rafflePerson', this.event._id, function (error) {
+            setMessage('raffled one prize', error);
+        });
     },
     'click .reset-raffle-command': function(e) {
         e.preventDefault();
-        Meteor.call('resetRaffle', this.event._id);
+        setMessage('resetting');
+        Meteor.call('resetRaffle', this.event._id, function (error) {
+            setMessage('reset the raffle', error);
+        });
     },
     'click .fetch-feedback-command': function(e) {
         e.preventDefault();
-        Meteor.call('fetchFeedback', this.event._id);
+        setMessage('fetching');
+        Meteor.call('fetchFeedback', this.event._id, function (error) {
+            setMessage('fetched', error);
+        });
     }
 });
 
@@ -36,5 +52,8 @@ Template['raffleIndex'].helpers({
         let prize = Prizes.findOne(this.prizeId);
         let prizeName = prize ? prize.name : '<unspecified>';
         return prizeName;
+    },
+    message: function() {
+        return Session.get('raffle-message');
     }
 });
