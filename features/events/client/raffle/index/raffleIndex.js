@@ -10,6 +10,10 @@ Template['raffleIndex'].events({
     'click .reset-raffle-command': function(e) {
         e.preventDefault();
         Meteor.call('resetRaffle', this.event._id);
+    },
+    'click .fetch-feedback-command': function(e) {
+        e.preventDefault();
+        Meteor.call('fetchFeedback', this.event._id);
     }
 });
 
