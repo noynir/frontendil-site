@@ -15,7 +15,7 @@ Meteor.methods({
             throw new Error('No responses');
         }
 
-        let winners = event.raffle;
+        let winners = event.raffle || [];
         if(winners.length >= responses.length) {
             throw new Error('All potential respondents have already won');
         }
