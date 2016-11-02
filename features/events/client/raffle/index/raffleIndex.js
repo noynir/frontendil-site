@@ -35,13 +35,14 @@ Template['raffleIndex'].events({
 
 Template['raffleIndex'].helpers({
     getWinnerName: function(event) {
+         console.log(event);
         let nameField = event.typeformNameField;
-
         let projection = {};
         let key = 'responses.answers.' + nameField;
         projection[key] = true;
+        console.log('this:'+JSON.stringify(this));
+        let response: any = _(event.responses).findWhere({ token: this.responseId });
 
-        let response: any = _(event.responses).findWhere({ id: this.responseId });
         let name = '';
         if(response && response.answers) {
             name = response.answers[nameField];
@@ -49,7 +50,7 @@ Template['raffleIndex'].helpers({
         return name;
     },
     getPrizeName: function() {
-        let prize = Prizes.findOne(this.prizeId);
+        let prize = Prizes.findOne(this.prizeId)    ;
         let prizeName = prize ? prize.name : '<unspecified>';
         return prizeName;
     },

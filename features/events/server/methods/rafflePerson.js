@@ -34,11 +34,11 @@ Meteor.methods({
             let responseIndex = random(responses.length);
             console.log('iterationIndex:', iterationIndex);
             let response = responses[responseIndex];
-            let previousWinner = _(winners).findWhere({ responseId: response.id });
+            let previousWinner = _(winners).findWhere({ responseId: response.token });
             console.log('previousWinner:', previousWinner);
             if(!previousWinner) {
                 winner = {
-                    responseId: response.id
+                    responseId: response.token
                 };
                 console.log('winner:', winner);
             }

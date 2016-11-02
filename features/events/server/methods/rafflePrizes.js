@@ -10,7 +10,7 @@ Meteor.methods({
             return response.completed !== '0';
         };
         let responses = event.responses.filter(responseFilter);
-
+        //console.log(responses);
         if(responses.length === 0) {
             throw new Error('No responses');
         }
@@ -46,20 +46,23 @@ Meteor.methods({
         do {
             iterationIndex++;
             let responseIndex = random(responses.length);
+            console.log('respones index:',responseIndex);
             console.log('iterationIndex:', iterationIndex);
             let response = responses[responseIndex];
-            let previousWinner = _(winners).findWhere({ responseId: response.id });
+            console.log('winner candidate',response);
+            let previousWinner = _(winners).findWhere({ responseId: response.token });
             console.log('previousWinner:', previousWinner);
             if(!previousWinner) {
                 let winner = winners[winnerIndex];
                 console.log('winner:', winner);
-                winner.responseId = response.id;
+                winner.responseId = response.token;
                 winnerIndex++;
             }
             console.log('winnerIndex:', winnerIndex);
         }
         while(winnerIndex < winnerCount && iterationIndex < responses.length * 2);
         console.log('rafflePrizes', 'winners:', winners.length);
+        console.log('rafflePrizes', 'winners:', winners);
 
         Events.update(
             {
